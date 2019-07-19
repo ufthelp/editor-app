@@ -1,0 +1,20 @@
+@import "../../scss/variables.scss";
+
+.tabListItem {
+  width: 8rem;
+  padding: .5rem;
+  display: flex;
+  justify-content: center;
+  border-right: 2px solid $rightPanelbgColor;
+    .text, .icon{
+      margin-left: .5rem;
+    }
+    .showIcon{
+      visibility: hidden;
+    }
+    
+  }
+
+  .tabListActive{
+    background-color: $rightPanelbgColor;
+  }

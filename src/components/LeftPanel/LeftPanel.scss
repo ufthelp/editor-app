@@ -1,0 +1,15 @@
+@import "../../scss/variables.scss";
+
+.leftPanelCta{
+    background-color: $defaultPanelbgColor;
+    width: $leftPanelWidth;
+    > div {
+      flex: 1;   
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+      cursor: pointer;
+      align-items: center;
+    }
+  }

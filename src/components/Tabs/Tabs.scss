@@ -1,0 +1,25 @@
+@import "../../scss/variables.scss";
+
+.tabList {
+    background-color: $defaultPanelbgColor;
+    color: $mainTextColor;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    list-style: none;
+    cursor: pointer;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    .text{
+      margin-left: .25rem
+    }
+  }
+  .tabContent{
+    margin: 1rem;
+  }
+  .transparentBg{
+    background-color: transparent
+  }
