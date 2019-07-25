@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import Tabs from '../Tabs';
 import  './RightPanel.scss';
 
@@ -18,4 +18,4 @@ const RightPanel = () => (
     </div>
 );
 
-export default RightPanel;
+export default memo(RightPanel);
