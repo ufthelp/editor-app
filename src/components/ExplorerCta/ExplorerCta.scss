@@ -1,0 +1,15 @@
+.explorerCta {
+  cursor: pointer;
+  border-left: 1px solid transparent;
+  .childCta{
+    padding: .5rem;
+    display: flex;
+    background-color: #333333;
+    align-items: center;
+    .text{
+      text-transform: uppercase;
+      font-size: .75rem;
+      margin-left: .75rem;
+    }
+  }
+}

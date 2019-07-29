@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './LeftPanel.scss';
-import Icon from '../Icon';
+import Icon from '../../UI/Icon';
 
 class LeftPanel extends Component {
     static propTypes = {

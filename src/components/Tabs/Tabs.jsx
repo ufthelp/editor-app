@@ -2,7 +2,7 @@ import React, {
     Component
 } from 'react';
 import PropTypes from 'prop-types';
-import Tab from '../Tab';
+import Tab from '../../UI/Tab';
 
 import './Tabs.scss';
 
