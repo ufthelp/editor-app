@@ -34,11 +34,18 @@ const options = {
 };
 
 class RightPanel extends PureComponent {
+
+  state ={
+    value: '//Default value'
+  }
   onChange = data => {
-    console.log(data);
+    this.setState({
+      value : data
+    })
   };
 
   render() {
+    const { value } = this.state;
     const sourceProps = {
       placeholder: "Placeholder Text",
       mode: "java",
@@ -46,8 +53,9 @@ class RightPanel extends PureComponent {
       name: "source",
       fontSize: "14",
       highlightActiveLine: true,
-      value: "",
+      value,
       width: "100%",
+      showGutter: false,
       height: "100%",
       setOptions: {
         enableBasicAutocompletion: false,
