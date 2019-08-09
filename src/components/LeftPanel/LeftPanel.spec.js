@@ -3,7 +3,7 @@ import {
     shallow,
 } from "enzyme";
 import LeftPanel from './LeftPanel';
-import Icon from '../Icon';
+import Icon from '../../UI/Icon';
 
 describe('<LeftPanel />', () => {
             const handleClick = jest.fn();

@@ -11,9 +11,9 @@ describe('<Input /> Component', ()=>{
 
     it('should render correctly', () => expect(wrapper).toMatchSnapshot());
 
-    it('should render the value of icon image', () => {
-        wrapper.setProps({ iconImage: 'file' });
-        expect(wrapper.text()).toEqual('<FontAwesomeIcon />');
+    it('should render the value of title prop', () => {
+        wrapper.setProps({ title: 'file' });
+        expect(wrapper.text()).toEqual('file');
     });
 })
 

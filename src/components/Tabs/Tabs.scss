@@ -1,10 +1,12 @@
 @import "../../scss/variables.scss";
 
+.tabCta{
+  width: 100%;
+}
 .tabList {
     background-color: $defaultPanelbgColor;
     color: $mainTextColor;
     display: flex;
-    justify-content: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -19,6 +21,10 @@
   }
   .tabContent{
     margin: 1rem;
+    height: 100%;
+    > div{
+      height: 100%;
+    }
   }
   .transparentBg{
     background-color: transparent

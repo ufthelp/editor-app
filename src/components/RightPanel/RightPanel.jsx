@@ -1,21 +1,53 @@
-import React, {memo} from 'react';
-import Tabs from '../Tabs';
-import  './RightPanel.scss';
+import React, { memo} from "react";
+import Tabs from "../Tabs";
+import NetworkGraph from "../../UI/NetworkGraph"
+import { DataSet } from "vis-network";
+
+import "./RightPanel.scss";
+
+//data to be rendered in Network graph
+const nodes = new DataSet([
+    { id: 1, label: "Node 1" },
+    { id: 2, label: "Node 2" },
+    { id: 3, label: "Node 3" },
+    { id: 4, label: "Node 4" },
+    { id: 5, label: "Node 5" }
+  ]);
+  
+  // create an array with edges
+  const edges = new DataSet([
+    { from: 1, to: 3 },
+    { from: 1, to: 2 },
+    { from: 2, to: 4 },
+    { from: 2, to: 5 }
+  ]);
+  
+  const data = {
+    nodes: nodes,
+    edges: edges
+  };
+  const options = {
+    autoResize: true,
+    height: "100%",
+    width: "100%"
+  };
 
 
 const RightPanel = () => (
-    <div className="rightPanelCta">
-        <div className="tab">
-            <Tabs>
-                <div header="Index.jsx">
-                    You are on Index.jsx file
-                </div>
-                <div header="Panel.jsx">
-                    You are on Panel.jsx file
-                </div>
-            </Tabs>
+  <div className="rightPanelCta">
+    <div className="tab">
+      <Tabs>
+        <div header="Index.jsx">You are on Index.jsx file</div>
+        <div header="Panel.jsx">You are on Panel.jsx file</div>
+
+        <div header="Network Graph">
+          <NetworkGraph data={data} options={options} />
         </div>
+      </Tabs>
     </div>
+  </div>
 );
+
+
 
 export default memo(RightPanel);

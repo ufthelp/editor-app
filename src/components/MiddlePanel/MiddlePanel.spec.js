@@ -9,6 +9,7 @@ describe('<MiddlePanel />', () => {
             beforeEach(() => wrapper = mount( < MiddlePanel content = {
                     "EXPLORER"
                 }
+                visibility
                 /> ));
 
                 it('should render correctly', () => expect(wrapper).toMatchSnapshot());

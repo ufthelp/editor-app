@@ -24,7 +24,8 @@ describe('<App /> Component', ()=>{
 
     it('should contain a <MiddlePanel /> component',()=>{
         expect(wrapper.containsMatchingElement(<MiddlePanel 
-            content={wrapper.instance().state.content}/>
+            content={wrapper.instance().state.content}
+            visibility />
         )).toEqual(true);
     })
 

@@ -33,7 +33,7 @@ class Tabs extends Component {
         } = this;
 
         return ( 
-            <div >
+            <div className="tabCta">
                 <ol className = "tabList" > {
                     children.map((child) => {
                         const {
