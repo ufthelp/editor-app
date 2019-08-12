@@ -13,7 +13,7 @@ class LeftPanel extends Component {
         //icon types 
         const arrIconImages = ['file','search','code-branch'];
         const {handleShowRightView,selectedIndex} = this.props;
-
+        
         return (
             <div className="leftPanelCta">
                 {

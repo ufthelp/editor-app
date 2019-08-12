@@ -2,6 +2,7 @@ import React, { PureComponent } from "react";
 import Tabs from "../Tabs";
 import NetworkGraph from "../../UI/NetworkGraph";
 import Source from "../../UI/Source";
+import Browse from "../Browse";
 import { DataSet } from "vis-network";
 
 import "./RightPanel.scss";
@@ -34,18 +35,31 @@ const options = {
 };
 
 class RightPanel extends PureComponent {
+  state = {
+    value: "//Default value",
+    fileText: ""
+  };
 
-  state ={
-    value: '//Default value'
-  }
-  onChange = data => {
+  onChange = content => {
     this.setState({
-      value : data
-    })
+      value: content
+    });
+  };
+
+  onFileSelection = event => {
+    let file = event.target.files[0];
+    let reader = new FileReader();
+    reader.readAsText(file);
+    reader.onLoad = event => {
+      console.log(event.target.result);
+      this.setState({
+        fileText : event.target.result
+      })
+    };
   };
 
   render() {
-    const { value } = this.state;
+    const { fileText, value } = this.state;
     const sourceProps = {
       placeholder: "Placeholder Text",
       mode: "java",
@@ -66,7 +80,6 @@ class RightPanel extends PureComponent {
       },
       onChange: this.onChange
     };
-
     return (
       <div className="rightPanelCta">
         <div className="tab">
@@ -74,7 +87,9 @@ class RightPanel extends PureComponent {
             <div header="Index.jsx">You are on Index.jsx file</div>
             <div header="Panel.jsx">You are on Panel.jsx file</div>
             <div header="Source">
-             <Source {...sourceProps} />
+              <Browse onFileSelection={this.onFileSelection} />
+              { !!fileText ?  <Source {...sourceProps} /> : null }
+              {/* <Source {...sourceProps} /> */}
             </div>
             <div header="Graph">
               <NetworkGraph data={data} options={options} />
