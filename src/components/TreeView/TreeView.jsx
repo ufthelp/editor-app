@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import TreeNode from '../../UI/TreeNode';
 import "./TreeView.scss";
 
 class TreeView extends Component {
@@ -48,25 +50,11 @@ class TreeView extends Component {
     return (
       <>
         {data.map(node => (
-          <TreeNode key={`node_${node.text}`}node={node} onExpandChange={this.onExpandChange} />
+          <TreeNode key={`node_${node.text}`} node={node} onExpandChange={this.onExpandChange} />
         ))}
       </>
     );
   }
 }
 
-const TreeNode = props => {
-  const { node, onExpandChange } = props;
-  return (
-    <>
-      <div onClick={() => onExpandChange(node)}>{node.text}</div>
-      {node.expanded &&
-        node.items.map((childNode, idx) => (
-          <div className="childNode" key={`${childNode}_${idx}`}>
-            {childNode.text}
-          </div>
-        ))}
-    </>
-  );
-};
 export default TreeView;
