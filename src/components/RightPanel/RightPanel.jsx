@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import Tabs from "../Tabs";
 import NetworkGraph from "../../UI/NetworkGraph";
+import Editor from '../../UI/Editor';
 import Source from "../../UI/Source";
 import Browse from "../Browse";
 import { DataSet } from "vis-network";
@@ -34,13 +35,16 @@ const options = {
   width: "100%"
 };
 
+
 class RightPanel extends PureComponent {
   state = {
     value: "//Default value",
     fileText: ""
   };
 
+  
   onChange = content => {
+    console.log(`new content ${content}`);
     this.setState({
       value: content
     });
@@ -60,30 +64,48 @@ class RightPanel extends PureComponent {
 
   render() {
     const { fileText, value } = this.state;
+    // const sourceProps = {
+    //   //ref:"ace",
+    //   placeholder: "Placeholder Text",
+    //   mode: "javascript", //change language
+    //   theme: "twilight",
+    //   name: "source",
+    //   fontSize: "14",
+    //   highlightActiveLine: true,
+    //   value,
+    //   width: "100%",
+    //   showGutter: false,
+    //   height: "100%",
+    //   setOptions: {
+    //     enableBasicAutocompletion: true,
+    //     enableLiveAutocompletion: false,
+    //     enableSnippets: false,
+    //     showLineNumbers: true,
+    //     tabSize: 2
+    //   },
+    //   onChange: this.onChange
+    // };
     const sourceProps = {
-      placeholder: "Placeholder Text",
-      mode: "java",
-      theme: "twilight",
-      name: "source",
-      fontSize: "14",
+      mode:"groovy",
+      theme:"twilight",
+      name:"UNIQUE_ID_OF_DIV",
+      enableBasicAutocompletion:true,
+      enableLiveAutocompletion:true,
       highlightActiveLine: true,
-      value,
+      enableSnippets:true,
+      onChange: this.onChange,
       width: "100%",
-      showGutter: false,
       height: "100%",
-      setOptions: {
-        enableBasicAutocompletion: false,
-        enableLiveAutocompletion: false,
-        enableSnippets: false,
-        showLineNumbers: true,
-        tabSize: 2
-      },
-      onChange: this.onChange
-    };
+      value
+    }
+
     return (
       <div className="rightPanelCta">
         <div className="tab">
           <Tabs>
+           <div  header="Editor">
+           <Editor {...sourceProps} />
+            </div>
             <div header="Index.jsx">You are on Index.jsx file</div>
             <div header="Panel.jsx">You are on Panel.jsx file</div>
             <div header="Source">
