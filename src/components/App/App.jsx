@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faFile, faSearch, faCodeBranch, faTimes, faChevronRight);
 
+// @ts-check
 class App extends Component {
   state = {
     content: "Explorer",

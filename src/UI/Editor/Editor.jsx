@@ -1,15 +1,16 @@
 import React, {Component} from "react";
 import AceEditor from "react-ace";
-import CustomLanguageMode from '../../util/CustomLanguageMode';
+//import CustomLanguageMode from '../../util/Groovy/GroovyLanguageMode';
+import CustomLanguageMode from '../../util/SQL/SQLLanguageMode';
 
-import 'brace/mode/java'; //for rendering language = java in editor
+import 'brace/mode/sql'; //for rendering language = java in editor
 import 'brace/mode/groovy';
 import 'brace/theme/twilight'; //theme variable
 
 import "./Editor.scss";
 
 class Editor extends Component {
-  aceEditor= React.createRef();
+  aceEditor= React.createRef(); //ref to editor element
   
   componentDidMount() {
     const customMode = new CustomLanguageMode(); //custom rules, syntax highlighting

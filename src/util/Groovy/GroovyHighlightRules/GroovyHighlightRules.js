@@ -1,6 +1,6 @@
 import 'brace/mode/groovy';
 
-class CustomHighlightRules extends window.ace.acequire('ace/mode/text_highlight_rules').TextHighlightRules {
+class GroovyHighlightRules extends window.ace.acequire('ace/mode/text_highlight_rules').TextHighlightRules {
 	constructor() {
 		super();
     const keywords =
@@ -177,4 +177,4 @@ class CustomHighlightRules extends window.ace.acequire('ace/mode/text_highlight_
 	}
 }
 
-export default CustomHighlightRules;
+export default GroovyHighlightRules;

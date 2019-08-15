@@ -34,7 +34,9 @@ const options = {
   height: "100%",
   width: "100%"
 };
-
+//code highlighter for erros
+let markers = [];
+markers.push({startRow: 1, startCol: 1, endRow: 1, endCol: 6, className: 'replacementMarker', type: 'text' });
 
 class RightPanel extends PureComponent {
   state = {
@@ -42,7 +44,7 @@ class RightPanel extends PureComponent {
     fileText: ""
   };
 
-  
+
   onChange = content => {
     console.log(`new content ${content}`);
     this.setState({
@@ -96,7 +98,8 @@ class RightPanel extends PureComponent {
       onChange: this.onChange,
       width: "100%",
       height: "100%",
-      value
+      value,
+      markers
     }
 
     return (
