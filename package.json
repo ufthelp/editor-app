@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@welldone-software/why-did-you-render": "^3.3.3",
     "brace": "^0.11.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
@@ -15,6 +16,7 @@
     "react-dom": "^16.9.0",
     "react-files": "^2.4.8",
     "react-scripts": "3.0.1",
+    "react-tooltip": "^3.10.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.87.3",
     "vis-network": "^5.2.0"

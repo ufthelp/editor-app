@@ -29,8 +29,7 @@ class SQLHighlightRules extends window.ace.acequire('ace/mode/text_highlight_rul
 			'identifier',
 			true
 		);
-		//all the api call to fetch rules at runtime
-		debugger 
+		//all the api call to fetch rules at runtime 
 		console.log(rules.start);
 
 		this.$rules = {

@@ -11,13 +11,15 @@ const NOTIFICATION_STATES = {
   Search: <SearchCta />
 };
 
+
 class MiddlePanel extends Component {
   static propTypes = {
     content: PropTypes.string.isRequired,
     visibility: PropTypes.bool.isRequired
   }
   state = {
-    isContextMenuVisible: false
+    isContextMenuVisible: false,
+    inputValue:''
   }
 
   //containerRef = React.createRef
@@ -59,6 +61,14 @@ class MiddlePanel extends Component {
       
     }
   }
+
+  //search category
+  handleChange = e => {
+    this.setState({
+        inputValue: e.target.value
+    })
+  }
+
   render() {
     const { content, visibility } = this.props;
     const { isContextMenuVisible, position } = this.state
@@ -78,9 +88,29 @@ class MiddlePanel extends Component {
                     handleItemClick={this.handleItemClick}/> 
             : null
         }
+        {/* <input type="text" value={this.state.inputValue} onChange={this.handleChange} />
+        <Category categoryData={categoryData} /> */}
       </div>
     );
   }
 }
+
+
+
+
+// const Category = (props) => {
+//   const rows =  props.categoryData.map(data => {
+//     return(
+//       <div className="align">
+//            <div> {data.category}</div>
+//            <div> {data.price}</div>
+//       </div>
+//     )
+    
+//   })
+
+//   return rows
+
+// }
 
 export default MiddlePanel;

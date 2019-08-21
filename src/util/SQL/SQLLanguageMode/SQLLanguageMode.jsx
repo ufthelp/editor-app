@@ -5,7 +5,6 @@ class SQLLanguageMode extends window.ace.acequire("ace/mode/sql")
   .Mode {
   constructor(rules) {
     super();
-    debugger;
     this.HighlightRules = SQLHighlightRules;
   }
 }
