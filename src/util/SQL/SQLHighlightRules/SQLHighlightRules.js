@@ -1,13 +1,14 @@
 import 'brace/mode/sql';
-import rules from '../../../data/rules';
+//import rules from '../../../data/rules';
 
 class SQLHighlightRules extends window.ace.acequire('ace/mode/text_highlight_rules').TextHighlightRules {
 	constructor() {
 		super();
-		const keywords =
+		const languageKeywords =
 			'select|insert|update|delete|from|where|and|or|group|by|order|limit|offset|having|as|case|' +
 			'when|then|else|end|type|left|right|join|on|outer|desc|asc|union|create|table|primary|key|if|' +
 			'foreign|not|references|default|null|inner|cross|natural|database|drop|grant';
+
 
 		const builtinConstants = 'true|false';
 
@@ -29,8 +30,6 @@ class SQLHighlightRules extends window.ace.acequire('ace/mode/text_highlight_rul
 			'identifier',
 			true
 		);
-		//all the api call to fetch rules at runtime 
-		console.log(rules.start);
 
 		this.$rules = {
 			start: [

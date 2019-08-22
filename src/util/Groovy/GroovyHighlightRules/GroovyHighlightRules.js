@@ -1,9 +1,11 @@
 import 'brace/mode/groovy';
+import customRules from '../../../data/customKeywords';
+
 
 class GroovyHighlightRules extends window.ace.acequire('ace/mode/text_highlight_rules').TextHighlightRules {
 	constructor() {
 		super();
-    const keywords =
+    const languageKeywords =
     'assert|with|abstract|continue|for|new|switch|' +
     'assert|default|goto|package|synchronized|' +
     'boolean|do|if|private|this|' +
@@ -16,40 +18,40 @@ class GroovyHighlightRules extends window.ace.acequire('ace/mode/text_highlight_
     'def|float|native|super|while|ying';
   
     const buildinConstants = 'null|Infinity|NaN|undefined';
-
-		const langClasses =
-			'AbstractMethodError|AssertionError|ClassCircularityError|' +
-			'ClassFormatError|Deprecated|EnumConstantNotPresentException|' +
-			'ExceptionInInitializerError|IllegalAccessError|' +
-			'IllegalThreadStateException|InstantiationError|InternalError|' +
-			'NegativeArraySizeException|NoSuchFieldError|Override|Process|' +
-			'ProcessBuilder|SecurityManager|StringIndexOutOfBoundsException|' +
-			'SuppressWarnings|TypeNotPresentException|UnknownError|' +
-			'UnsatisfiedLinkError|UnsupportedClassVersionError|VerifyError|' +
-			'InstantiationException|IndexOutOfBoundsException|' +
-			'ArrayIndexOutOfBoundsException|CloneNotSupportedException|' +
-			'NoSuchFieldException|IllegalArgumentException|NumberFormatException|' +
-			'SecurityException|Void|InheritableThreadLocal|IllegalStateException|' +
-			'InterruptedException|NoSuchMethodException|IllegalAccessException|' +
-			'UnsupportedOperationException|Enum|StrictMath|Package|Compiler|' +
-			'Readable|Runtime|StringBuilder|Math|IncompatibleClassChangeError|' +
-			'NoSuchMethodError|ThreadLocal|RuntimePermission|ArithmeticException|' +
-			'NullPointerException|Long|Integer|Short|Byte|Double|Number|Float|' +
-			'Character|Boolean|StackTraceElement|Appendable|StringBuffer|' +
-			'Iterable|ThreadGroup|Runnable|Thread|IllegalMonitorStateException|' +
-			'StackOverflowError|OutOfMemoryError|VirtualMachineError|' +
+	//all the api call to fetch rules at runtime 
+	const langClasses =
+		'AbstractMethodError|AssertionError|ClassCircularityError|' +
+		'ClassFormatError|Deprecated|EnumConstantNotPresentException|' +
+		'ExceptionInInitializerError|IllegalAccessError|' +
+		'IllegalThreadStateException|InstantiationError|InternalError|' +
+		'NegativeArraySizeException|NoSuchFieldError|Override|Process|' +
+		'ProcessBuilder|SecurityManager|StringIndexOutOfBoundsException|' +
+		'SuppressWarnings|TypeNotPresentException|UnknownError|' +
+		'UnsatisfiedLinkError|UnsupportedClassVersionError|VerifyError|' +
+		'InstantiationException|IndexOutOfBoundsException|' +
+		'ArrayIndexOutOfBoundsException|CloneNotSupportedException|' +
+		'NoSuchFieldException|IllegalArgumentException|NumberFormatException|' +
+		'SecurityException|Void|InheritableThreadLocal|IllegalStateException|' +
+		'InterruptedException|NoSuchMethodException|IllegalAccessException|' +
+		'UnsupportedOperationException|Enum|StrictMath|Package|Compiler|' +
+		'Readable|Runtime|StringBuilder|Math|IncompatibleClassChangeError|' +
+		'NoSuchMethodError|ThreadLocal|RuntimePermission|ArithmeticException|' +
+		'NullPointerException|Long|Integer|Short|Byte|Double|Number|Float|' +
+		'Character|Boolean|StackTraceElement|Appendable|StringBuffer|' +
+		'Iterable|ThreadGroup|Runnable|Thread|IllegalMonitorStateException|' +
+		'StackOverflowError|OutOfMemoryError|VirtualMachineError|' +
 			'ArrayStoreException|ClassCastException|LinkageError|' +
 			'NoClassDefFoundError|ClassNotFoundException|RuntimeException|' +
 			'Exception|ThreadDeath|Error|Throwable|System|ClassLoader|' +
       'Cloneable|Class|CharSequence|Comparable|String|Object';
       
 
-        
+
 		const keywordMapper = this.createKeywordMapper(
 			{
 				'variable.language': 'this',
-				keyword: keywords,
-				'support.function': langClasses,
+				keyword: `${languageKeywords}|${customRules.keywords.join('|')}`, //TO-DO inject custom keywords from backend,
+				'support.function': `${langClasses}|${customRules.classes.join('|')}`,
 				'constant.language': buildinConstants
 			},
 			'identifier'
