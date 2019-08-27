@@ -50,7 +50,7 @@ class GroovyHighlightRules extends window.ace.acequire('ace/mode/text_highlight_
 		const keywordMapper = this.createKeywordMapper(
 			{
 				'variable.language': 'this',
-				keyword: `${languageKeywords}|${customRules.keywords.join('|')}`, //TO-DO inject custom keywords from backend,
+				keyword: `${languageKeywords}|${customRules.keywords.join('|')}`, //TODO inject custom keywords from backend,
 				'support.function': `${langClasses}|${customRules.classes.join('|')}`,
 				'constant.language': buildinConstants
 			},

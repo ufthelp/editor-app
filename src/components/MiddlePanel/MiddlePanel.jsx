@@ -84,7 +84,7 @@ class MiddlePanel extends Component {
         {
           isContextMenuVisible ? 
                 <ContextMenu 
-                    items={['aplha', 'beta', 'gamma', 'Rename']} position={position} 
+                    items={['Create DS', 'Create DS1', 'Create DS2', 'Create DS3']} position={position} 
                     handleItemClick={this.handleItemClick}/> 
             : null
         }
