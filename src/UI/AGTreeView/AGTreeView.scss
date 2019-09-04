@@ -1,0 +1,11 @@
+.ag-header.ag-pivot-off {
+    display: none;
+}
+
+.ag-theme-balham .ag-row {
+    background-color: white;
+    border-color: #fff;
+    &:hover{
+        background-color: lightgrey
+    }
+}

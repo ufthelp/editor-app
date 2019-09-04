@@ -3,6 +3,7 @@ import Tabs from '../Tabs';
 import NetworkGraph from '../../UI/NetworkGraph';
 import Editor from '../../UI/Editor';
 import Source from '../../UI/Source';
+import AGTreeView from '../../UI/AGTreeView';
 import Browse from '../Browse';
 import { DataSet } from 'vis-network';
 
@@ -152,6 +153,9 @@ class RightPanel extends PureComponent {
 						<div header="Editor">
 							<Editor {...sourceProps} />
 						</div>
+            <div header="AG-grid">
+              <AGTreeView {...sourceProps} />
+            </div>
 						<div header="Index.jsx">You are on Index.jsx file</div>
 						<div header="Panel.jsx">You are on Panel.jsx file</div>
 						<div header="Source">
