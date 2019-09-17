@@ -5,7 +5,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import 'ag-grid-enterprise'; //enterprise trial
 
-import ChildMessageRenderer from "./childMessageRenderer.jsx";
+import ChildMessageRenderer from './childMessageRenderer.jsx';
 import Icon from '../Icon';
 
 import './AGTreeView.scss';
@@ -17,32 +17,31 @@ class AGTreeView extends Component {
 
 		this.state = {
 			columnDefs: [
-        {
-          headerName: 'filePath',
-          field: "filePath",
-          width: 100,
-          hide: true,
-          suppressToolPanel: true,
-          autoHeight: true,
-          
-       },
 				{
-          headerName:'Click me',
+					headerName: 'filePath',
+					field: 'filePath',
+					width: 100,
+					hide: true,
+					suppressToolPanel: true,
+					autoHeight: true
+				},
+				{
+					headerName: 'Click me',
 					field: 'id',
 					cellRenderer: 'childMessageRenderer',
 					colId: 'params',
-          width: 280,
-          autoHeight: true,
+					width: 280,
+					autoHeight: true
 				}
-      ],
-    //   getRowHeight: function(params) {
-    //     debugger
-    //     return 28 * (Math.floor(params.data.latinText.length / 60) + 1);
-    //   },
+			],
+			//   getRowHeight: function(params) {
+			//     debugger
+			//     return 28 * (Math.floor(params.data.latinText.length / 60) + 1);
+			//   },
 			rowData: [
 				{
 					id: 1,
-          filePath: [ 'Documents' ],
+					filePath: [ 'Documents' ]
 				},
 				{
 					id: 2,
@@ -136,17 +135,17 @@ class AGTreeView extends Component {
 					suppressCount: true,
 					innerRenderer: 'fileCellRenderer'
 				}
-      },
-      frameworkComponents: {
-        childMessageRenderer: ChildMessageRenderer
-      }
+			},
+			frameworkComponents: {
+				childMessageRenderer: ChildMessageRenderer
+			}
 		};
 	}
 
 	onGridReady = (params) => {
 		this.gridApi = params.api;
-    this.gridColumnApi = params.columnApi;
-    this.gridColumnApi.setColumnVisible('', false);
+		this.gridColumnApi = params.columnApi;
+		this.gridColumnApi.setColumnVisible('', false);
 	};
 
 	//creating custom context menu
@@ -248,6 +247,5 @@ function getFileIcon(filename) {
 function createFlagImg(flag) {
 	return '<img border="0" width="15" height="10" src="https://flags.fmcdn.net/data/flags/mini/' + flag + '.png"/>';
 }
-
 
 export default AGTreeView;
