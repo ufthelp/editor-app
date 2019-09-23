@@ -23,7 +23,7 @@ class Editor extends Component {
   }
  
   render(){
-    const {...props} = this.props;
+    const {props} = this;
     return(
         <AceEditor {...props}  
             ref={this.aceEditor}
