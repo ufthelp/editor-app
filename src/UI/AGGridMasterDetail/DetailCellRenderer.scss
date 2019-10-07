@@ -1,0 +1,16 @@
+form > div {
+    display: flex;
+    background-color: #EDF6FF;
+}
+
+form > div > p {
+    min-width: 33.33%;
+}
+
+form p { color: #0b0b18; }
+
+label {
+    display: block;
+    margin: 0.75em 25%;
+    font-weight: bold;
+}

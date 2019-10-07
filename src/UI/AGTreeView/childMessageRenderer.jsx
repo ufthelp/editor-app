@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Text from "../Text";
 
 
+
 export default class ChildMessageRenderer extends Component {
 	state = {
 		hideForm: true
@@ -10,10 +11,12 @@ export default class ChildMessageRenderer extends Component {
 		console.count();
 		this.setState({
 			hideForm: !this.state.hideForm
-		});
+        });
     };
+
 	render() {
-		const { hideForm } = this.state;
+        const { hideForm } = this.state
+
 		return (
 			<span>
 				<button  onClick={this.onClick} className="btn btn-info">
@@ -34,20 +37,20 @@ const FormContent= () =>{
             <p>Please fill in this form to create an account.</p>
             <hr/>
 
-            <label for="email"><b>Email</b></label>
+            <label htmlFor="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" required/>
 
-            <label for="psw"><b>Password</b></label>
+            <label htmlFor="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required/>
 
-            <label for="psw-repeat"><b>Repeat Password</b></label>
+            <label htmlFor="psw-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
             <hr/>
 
             <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-            <button type="submit" class="registerbtn">Register</button>
+            <button type="submit" >Register</button>
 
-            <div class="container signin">
+            <div >
                 <p>Already have an account? <a href="#">Sign in</a>.</p>
             </div>
         </>
