@@ -7,6 +7,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@welldone-software/why-did-you-render": "^3.3.3",
+    "ace-diff": "^2.3.0",
     "ag-grid-community": "^21.1.1",
     "ag-grid-enterprise": "^21.1.1",
     "ag-grid-react": "^21.1.0",

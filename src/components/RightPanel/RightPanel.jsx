@@ -6,6 +6,8 @@ import Source from '../../UI/Source'
 //import AGTreeView from '../../UI/AGGridMasterDetail'
 //import AGGridMasterDetail from '../../UI/AGGridMasterDetail'
 import AGGridExpandable from '../../UI/AGGridExpandable'
+import AceDiff from '../../UI/AceDiff'
+
 import Browse from '../Browse'
 import { DataSet } from 'vis-network'
 
@@ -131,6 +133,9 @@ class RightPanel extends PureComponent {
 			<div className="rightPanelCta">
 				<div className="tab">
 					<Tabs>
+						<div header="AceDiff">
+							<AceDiff />
+						</div>
 						<div header="Expandable">
 							<AGGridExpandable />
 						</div>
